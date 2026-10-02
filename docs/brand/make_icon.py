@@ -29,8 +29,9 @@ def draw_mark(size=256, background=PAPER):
     width = max(2, int(big * 0.065))
     pen.ellipse([centre - ring, centre - ring, centre + ring, centre + ring], outline=TEAL, width=width)
     d = ring * 0.62
-    pen.line([(centre - d, centre), (centre, centre - d), (centre + d, centre),
-              (centre, centre + d), (centre - d, centre)], fill=RUST, width=width, joint="curve")
+    # a polygon outline, not a closed line: a line's two ends meet with a notch at this width
+    pen.polygon([(centre - d, centre), (centre, centre - d), (centre + d, centre), (centre, centre + d)],
+                outline=RUST, width=width)
     return image.resize((size, size), Image.LANCZOS)
 
 
