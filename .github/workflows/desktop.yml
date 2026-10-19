@@ -65,12 +65,16 @@ jobs:
         with:
           name: BindCraft2-launcher-windows
           path: dist/BindCraft2-launcher/
+          # the release page keeps the files; the run's own copies only need to last until it
+          retention-days: 3
       - name: zip the folder for the release page
         run: Compress-Archive -Path dist/BindCraft2-launcher -DestinationPath BindCraft2-launcher-windows.zip
       - uses: actions/upload-artifact@v4
         with:
           name: release-windows
           path: BindCraft2-launcher-windows.zip
+          # the release page keeps the files; the run's own copies only need to last until it
+          retention-days: 3
 
   macos:
     runs-on: macos-14
@@ -116,6 +120,8 @@ jobs:
         with:
           name: BindCraft2-launcher-mac-apple-silicon
           path: BindCraft2-launcher-mac-apple-silicon.zip
+          # the release page keeps the files; the run's own copies only need to last until it
+          retention-days: 3
 
   # A tag also gets a release page with both zips, which anyone who can see the repository can
   # download from.
