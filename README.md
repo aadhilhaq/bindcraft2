@@ -66,7 +66,7 @@ The page, the submit tool and the environment live with the install at
 `sflab/bc2-submit` does the same job from the command line. The launcher only runs
 `sflab/bc2-serve` on the login node, so a change to the page needs no new launcher.
 
-## Credits and licence
+## Credits and license
 
 BindCraft2 is by the Pacesa lab; AlphaFold 2 (CC-BY-4.0, DeepMind) and ProteinMPNN belong to their
 authors, and each campaign records the versions it used in `campaign_metadata.json`. Please cite

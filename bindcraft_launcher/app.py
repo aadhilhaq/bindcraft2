@@ -32,8 +32,8 @@ BANNER = dict(deep="#0d5c6b", deeper="#083944", teal="#5fb3c4", warm="#c2603a",
 def banner_layout(width, height, line_heights, line_widths, panel=80, gutter=18, gap=20,
                   line_gap=3, motif_min=140, motif_clear=44):
     """Where everything in the header banner goes, as plain arithmetic (testable without Tk):
-    every text line starts at the same x; the text block is centred vertically as a block on
-    the mark's centre line; the motif starts after the widest line plus a margin and is left
+    every text line starts at the same x; the text block is centered vertically as a block on
+    the mark's center line; the motif starts after the widest line plus a margin and is left
     out when there is no room."""
     px = gutter
     py = (height - panel) / 2.0
@@ -51,7 +51,7 @@ def banner_layout(width, height, line_heights, line_widths, panel=80, gutter=18,
 
 
 def centre_on(pw, ph, px, py, w, h, sw, sh):
-    """Where a w x h dialogue goes over a pw x ph parent at (px, py): clamped onto the screen."""
+    """Where a w x h dialog goes over a pw x ph parent at (px, py): clamped onto the screen."""
     if pw > w and ph > h:
         x = px + (pw - w) // 2
         y = py + (ph - h) // 3
@@ -64,7 +64,7 @@ def centre_on(pw, ph, px, py, w, h, sw, sh):
 
 
 def place_over(win, parent, log=None):
-    """Put a dialogue over the window that raised it, then show it: never mapped unplaced."""
+    """Put a dialog over the window that raised it, then show it: never mapped unplaced."""
     try:
         if parent is not None:
             parent.update_idletasks()
@@ -81,7 +81,7 @@ def place_over(win, parent, log=None):
         win.lift()
     except Exception as exc:                                    # noqa: BLE001
         if log:
-            log("could not place the dialogue (%s: %s); it will open wherever the window manager puts it"
+            log("could not place the dialog (%s: %s); it will open wherever the window manager puts it"
                 % (type(exc).__name__, exc))
         try:
             win.deiconify()
@@ -377,9 +377,9 @@ class App:
             pass
         self.root.after(120, self.pump)
 
-    # ---- the Duo dialogue, on the main thread ---------------------------
+    # ---- the Duo dialog, on the main thread ---------------------------
     def ask(self, title, instructions, prompts):
-        """One dialogue per challenge, however many fields it carries; built on the main thread,
+        """One dialog per challenge, however many fields it carries; built on the main thread,
         the worker waits on an event."""
         done = threading.Event()
         answers = []

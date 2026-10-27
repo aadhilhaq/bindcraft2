@@ -16,7 +16,7 @@ Authentication is the part worth being careful about. The site asks for a
 password and then a Duo challenge, and the Duo challenge is a free-text prompt
 whose wording is decided by Duo and changes: it may offer a numbered menu, it
 may ask for a passcode, it may say an approval has already been sent. So
-nothing here tries to recognise or answer it. Every prompt the server sends is
+nothing here tries to recognize or answer it. Every prompt the server sends is
 passed to the caller with its text intact, and whatever the caller returns goes
 back unaltered. The caller shows the text to the person sitting there.
 
@@ -248,7 +248,7 @@ def _handler(ask, log=None):
     RFC 4256 section 3.3: a request carrying zero prompts is a MESSAGE to show,
     and the client "MUST NOT prompt the user" for it. Grace sends exactly that
     after a Duo push is approved, so asking would put up, on every successful
-    login, a dialogue with no question in it and a Continue button, arriving
+    login, a dialog with no question in it and a Continue button, arriving
     after the person has already approved on their phone.
 
     That is worse than an extra click. The handler runs on the transport's
@@ -261,7 +261,7 @@ def _handler(ask, log=None):
     server's words go.
 
     Nothing here reads the prompt text. Duo decides that wording and changes
-    it, so a handler that recognised "password" in a hidden prompt would one
+    it, so a handler that recognized "password" in a hidden prompt would one
     day hand the account password to Duo. Every question goes to the person, in
     the server's own words.
     """

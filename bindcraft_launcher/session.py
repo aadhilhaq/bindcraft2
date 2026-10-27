@@ -14,7 +14,7 @@ from . import clusters
 URL = re.compile(r"http://127\.0\.0\.1:(\d+)/\?t=([A-Za-z0-9_\-]+)")
 
 #: Printed by the remote command when the install carries no bc2-serve: a marker rather than a
-#: sentence, so the launcher recognises it without matching on wording.
+#: sentence, so the launcher recognizes it without matching on wording.
 NO_SERVE_MARKER = "BINDCRAFT_NO_BC2_SERVE"
 
 #: Where the install might be, when the person has not said. Tried in order.

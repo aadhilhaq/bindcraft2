@@ -18,7 +18,7 @@ def main(argv=None):
         assert "bc2-serve" in line and "--host 127.0.0.1" in line, line
         assert '"$HOME"/r' in line, line
         assert tunnel.AUTH_PATIENCE >= 120, "the Duo timeout was shortened"
-        assert session.URL.search("open  http://127.0.0.1:8123/?t=abcDEF_-"), "the server's URL line would not be recognised"
+        assert session.URL.search("open  http://127.0.0.1:8123/?t=abcDEF_-"), "the server's URL line would not be recognized"
         assert clusters.half_typed("/scratch/user/j/bindcraft_runs", "jane.doe") and not clusters.half_typed("/scratch/user/jane.doe/bindcraft_runs", "jane.doe")
         assert clusters.SITES["Grace (TAMU)"]["install"] == "/scratch/group/sflab/BindCraft2"
         notes = []
