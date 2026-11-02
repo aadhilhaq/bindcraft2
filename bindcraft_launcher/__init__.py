@@ -6,7 +6,7 @@ on the laptop except this launcher and paramiko. It is the HOPE-MD launcher (its
 hopemd_launcher/) with BindCraft2's names; the lab's launchers are meant to feel identical.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 APP = "BindCraft2"
 TAGLINE = "design a binder, on Grace"
 BLURB = "Binder design with AlphaFold 2 and ProteinMPNN: a target, its hotspots, a binder length."
